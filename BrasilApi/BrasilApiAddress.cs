@@ -24,7 +24,7 @@ public class BrasilApiAddress : IBrasilApiAddress
 
         using var responseBrasilAPI = await httpClient.GetAsync($"{apiEndpoint}{cep}");
 
-        var contentResponse = await responseBrasilAPI.Content.ReadAsStreamAsync();
+        var contentResponse = await responseBrasilAPI.Content.ReadAsStringAsync();
 
         var dataResponse = JsonSerializer.Deserialize<Address>(contentResponse);
 
