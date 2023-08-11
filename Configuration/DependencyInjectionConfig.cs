@@ -11,8 +11,12 @@ public static class DependencyInjectionConfig
     {
         services.AddScoped<IAddressService, AddressService>();
         services.AddScoped<IBankService, BankService>();
+        services.AddScoped<IDDDService, DDDService>();
+
+
         services.AddScoped<IBrasilApiAddress, BrasilApiAddress>();
         services.AddScoped<IBrasilApiBank, BrasilApiBank>();
+        services.AddScoped<IBrasilApiDDD, BrasilApiDDD>();
 
         return services;
     }
